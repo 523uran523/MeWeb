@@ -1,0 +1,63 @@
+{
+  "files": [
+    "index.html",
+    "assets/css/style.css",
+    "assets/js/projects.js",
+    "assets/js/main.js"
+  ],
+  "html": "index.html",
+  "ids": [
+    "scroll-progress",
+    "cursor-glow",
+    "site-header",
+    "nav-toggle",
+    "mobile-nav",
+    "hero",
+    "stat-years",
+    "stat-projects",
+    "stat-directions",
+    "stat-remote",
+    "about",
+    "services",
+    "stack",
+    "projects",
+    "project-filters",
+    "project-viewport",
+    "project-track",
+    "prev-project",
+    "next-project",
+    "project-dots",
+    "project-modal",
+    "modal-close",
+    "modal-cover",
+    "modal-title",
+    "modal-tags",
+    "modal-description",
+    "modal-link",
+    "contact",
+    "copy-email",
+    "contact-toast",
+    "year"
+  ],
+  "jsRefs": [
+    "project-filters",
+    "project-track",
+    "prev-project",
+    "next-project",
+    "project-dots",
+    "project-modal",
+    "modal-close",
+    "modal-title",
+    "modal-tags",
+    "modal-description",
+    "modal-link",
+    "copy-email",
+    "contact-toast"
+  ],
+  "owners": {
+    "index.html": "claude",
+    "assets/css/style.css": "claude",
+    "assets/js/projects.js": "claude",
+    "assets/js/main.js": "claude"
+  }
+}

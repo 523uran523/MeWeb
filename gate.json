@@ -1,0 +1,43 @@
+{
+  "tier0": {
+    "files": [
+      "index.html",
+      "assets/css/style.css",
+      "assets/js/projects.js",
+      "assets/js/main.js"
+    ],
+    "required": [
+      "index.html",
+      "assets/css/style.css",
+      "assets/js/projects.js",
+      "assets/js/main.js"
+    ],
+    "contract": "contract.json"
+  },
+  "tier1": {
+    "url": "http://127.0.0.1:4173/",
+    "required": [
+      "#hero",
+      "#about",
+      "#services",
+      "#stack",
+      "#projects",
+      "#project-track",
+      "#contact",
+      "#project-modal",
+      "#nav-toggle",
+      "#prev-project",
+      "#next-project"
+    ],
+    "action": {
+      "selector": "#next-project",
+      "waitMs": 800,
+      "expect": {
+        "visible": [
+          "#project-track"
+        ]
+      }
+    },
+    "screenshot": true
+  }
+}

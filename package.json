@@ -1,0 +1,10 @@
+{
+  "name": "yurev-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Личный сайт-портфолио Юрия Юрьева",
+  "scripts": {
+    "start": "node tools/serve.cjs",
+    "serve": "node tools/serve.cjs"
+  }
+}
