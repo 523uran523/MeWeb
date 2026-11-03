@@ -191,18 +191,6 @@ html.has-mouse #cursor-glow{display:block}
 .tech-list{display:flex;flex-wrap:wrap;gap:.5rem}
 .tech{padding:.4rem .8rem;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.04);font-size:.9rem;font-weight:600;transition:border-color .25s,background .25s}
 .tech:hover{border-color:rgba(34,211,238,.5);background:rgba(34,211,238,.08)}
-.agent{display:grid;gap:.9rem;justify-items:start;padding:clamp(1.5rem,3vw,2.2rem);border-radius:var(--r-lg);box-shadow:0 30px 80px -40px rgba(139,92,246,.6)}
-.agent__icon{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:var(--grad);color:#05060a}
-.agent__title{font-size:clamp(1.3rem,2.4vw,1.7rem);letter-spacing:-.02em}
-.agent__text{max-width:60ch;color:var(--muted)}
-
-.marquee{position:relative;margin-top:clamp(3rem,7vw,5rem);padding-block:1.1rem;overflow:hidden;border-block:1px solid var(--line);background:rgba(255,255,255,.015);-webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.marquee__track{display:flex;width:max-content}
-.marquee__group{display:flex;flex:none;align-items:center;animation:marquee 44s linear infinite}
-.marquee:hover .marquee__group{animation-play-state:paused}
-.marquee__item{display:flex;align-items:center;gap:2rem;padding-right:2rem;color:var(--faint);font:500 1rem var(--mono);white-space:nowrap}
-.marquee__item::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--grad)}
-
 /* ---------- 10. Проекты ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:clamp(1.5rem,4vw,2.2rem)}
 .chip{padding:.55rem 1.15rem;border:1px solid var(--line-2);border-radius:999px;background:rgba(255,255,255,.04);color:var(--muted);font-size:.92rem;font-weight:600;transition:color .25s,border-color .25s,background .25s,transform .25s}
@@ -297,7 +285,6 @@ html.has-mouse #cursor-glow{display:block}
 /* ---------- 14. Анимации ---------- */
 @keyframes rise{from{opacity:0;translate:var(--from-x,0) var(--from-y,28px)}to{opacity:1;translate:0 0}}
 @keyframes reveal-failsafe{to{opacity:1}}
-@keyframes marquee{to{translate:-100% 0}}
 @keyframes drift{to{transform:translate3d(6vmax,4vmax,0) scale(1.12)}}
 @keyframes float{50%{transform:translateY(-8px)}}
 @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(163,230,53,0)}100%{box-shadow:0 0 0 0 rgba(163,230,53,0)}}
@@ -350,7 +337,7 @@ html.has-mouse #cursor-glow{display:block}
   .contact__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .contact-card--telegram{grid-column:span 2}
   .stack__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stack-group:nth-child(5),.agent{grid-column:1/-1}
+  .stack-group:nth-child(5){grid-column:1/-1}
 }
 @media (min-width:700px){
   :root{--cols:2}
@@ -394,8 +381,5 @@ html.has-mouse #cursor-glow{display:block}
   .reveal,.reveal-stagger>*{opacity:1!important;translate:none!important}
   [data-tilt]{transform:none!important}
   #cursor-glow{display:none}
-  .marquee__track{width:auto}
-  .marquee__group{flex-wrap:wrap;justify-content:center;row-gap:.6rem}
-  .marquee__group:nth-child(2){display:none}
   .modal__panel{transform:none}
 }

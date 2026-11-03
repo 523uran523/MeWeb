@@ -309,7 +309,7 @@
 
   function categoryLabel(project) {
     if (project.categoryLabel) return project.categoryLabel;
-    var map = { engee: 'Engee', bots: 'Боты', web: 'Web', apps: 'Приложения' };
+    var map = { web: 'Web', bots: 'Боты', apps: 'Приложения', engineering: 'Инженерия' };
     return map[project.category] || project.category || 'Проект';
   }
 
