@@ -3,3 +3,8 @@ node_modules/
 Thumbs.db
 *.log
 .scrappy/
+# Временные артефакты
+.shots/
+assets/img/projects/shots/
+_tmp_*.png
+*.tmp

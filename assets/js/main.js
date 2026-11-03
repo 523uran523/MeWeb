@@ -342,11 +342,6 @@
     var meta = el('div', 'project-card__meta');
     meta.appendChild(el('span', 'project-card__category', categoryLabel(project)));
     var right = el('span', 'project-card__year', project.year || '');
-    if (!project.link) {
-      var nda = el('span', 'badge badge--nda', 'NDA');
-      right.appendChild(document.createTextNode(' '));
-      right.appendChild(nda);
-    }
     meta.appendChild(right);
 
     var title = el('h3', 'project-card__title', project.title);
@@ -583,10 +578,6 @@
       tags.textContent = '';
       (project.tags || []).forEach(function (tag) { tags.appendChild(el('span', 'tag', tag)); });
     }
-    if (actions) {
-      var oldNda = $('.modal__nda', actions);
-      if (oldNda) oldNda.remove();
-    }
     if (link) {
       var url = safeUrl(project.link);
       if (url) {
@@ -597,7 +588,6 @@
       } else {
         link.removeAttribute('href');
         link.style.display = 'none';
-        if (actions) actions.appendChild(el('span', 'modal__nda', 'Проект под NDA'));
       }
     }
     modal.setAttribute('aria-hidden', 'false');

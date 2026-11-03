@@ -10,7 +10,7 @@
 
 - `index.html` — разметка всех секций: Hero, Обо мне, Услуги, Стек, Проекты, Контакты, footer и модальное окно проекта.
 - `assets/css/style.css` — стили, дизайн-токены, адаптив, анимации, reduced motion.
-- `assets/js/projects.js` — данные проектов в глобальной переменной `window.PROJECTS` (10 объектов).
+- `assets/js/projects.js` — данные проектов в глобальной переменной `window.PROJECTS` (18 объектов).
 - `assets/js/main.js` — рендер проектов, фильтры, карусель, модалка + hash-routing, анимации, меню, копирование email.
 - `assets/img/projects/*.jpg` — локальные обложки проектов Engee (7 файлов).
 - `tools/serve.cjs` — простой статический HTTP-сервер для локальной проверки.
