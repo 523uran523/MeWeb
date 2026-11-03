@@ -53,8 +53,8 @@ tags: ["Go", "C#", "Java", "sing-box", "WireGuard"],
 cover: "",
 link: "",
 featured: false,
-description: "VPN-клиент с поддержкой KZ и VK серверов: Windows, Android, iOS, macOS.",
-details: "Сервер на sing-box/VLESS+Reality (TCP 443) + VK Peer на WireGuard. Клиенты: Windows (C#/WPF), Android (Java+Go/JNI), iOS/macOS (Go bridge). Система enrolement через HTTPS:8443 для безопасной выдачи конфигураций. Автообновление APK, тестовые сборки, CI/CD."
+description: "VPN-клиент с поддержкой серверов KZ и VK: Windows, Android, iOS, macOS.",
+details: "Защищённая сетевая инфраструктура для собственного использования. Сервер на sing-box/VLESS+Reality + WireGuard Peer. Клиенты для Windows (C#/WPF), Android (Java+Go/JNI), iOS/macOS (Go bridge). Система enrolement для безопасной выдачи конфигураций. Автообновление APK, тестовые сборки, CI/CD. Проект создан в соответствии с применимым законодательством."
 },
 {
 id: "ritm-sdr-usrp",
