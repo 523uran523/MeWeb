@@ -380,3 +380,81 @@ html.has-mouse #cursor-glow{display:block}
   #cursor-glow{display:none}
   .modal__panel{transform:none}
 }
+
+/* ---------- 17. Переключение темы (светлая/тёмная) ---------- */
+/* По умолчанию (тёмная) — иконки и токены из :root.
+   Светлая тема переопределяет переменные и делаем стекло читаемым. */
+:root{color-scheme:dark}
+
+.theme-toggle{display:grid;place-items:center;flex:none;width:44px;height:44px;border:1px solid var(--line-2);border-radius:12px;background:rgba(255,255,255,.04);color:var(--text);transition:border-color .25s,background .25s,transform .25s}
+.theme-toggle:hover{border-color:rgba(34,211,238,.6);background:rgba(34,211,238,.08);transform:translateY(-1px)}
+.theme-toggle:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.theme-toggle .icon{width:20px;height:20px}
+@media (max-width:899px){.theme-toggle{margin-left:auto}}
+
+/* Мягкий переход при смене темы (цвета, фон, границы) */
+body{transition:background-color .3s ease,color .3s ease}
+.glass,.project-card,.tech,.tag,.btn,.badge,.theme-toggle,.nav-toggle{transition:background-color .3s ease,color .3s ease,border-color .3s ease,box-shadow .3s,transform .25s var(--ease)}
+
+[data-theme="light"]{
+  color-scheme:light;
+  --bg:#edf0f7;--surface:#f8faff;
+  --text:#10182b;--muted:#3f4a66;--faint:#5b688a;
+  --line:rgba(16,24,43,.12);--line-2:rgba(16,24,43,.2);
+  /* На светлом фоне неоновым акцентам нужна дополнительная «плотность» */
+  --cyan:#0891b2;--violet:#7c3aed;--pink:#db2777;--lime:#4d7c0f;
+  --grad:linear-gradient(120deg,var(--cyan),var(--violet) 55%,var(--pink));
+}
+[data-theme="light"] .theme-toggle .icon-sun{display:none}
+[data-theme="light"] .theme-toggle .icon-moon{display:block}
+
+/* Фон: светлая версия ауры и сетки */
+[data-theme="light"] .bg{background:radial-gradient(120% 80% at 50% -10%,#dfe6f5,var(--bg) 60%)}
+[data-theme="light"] .bg__aurora{opacity:.32}
+[data-theme="light"] .bg__grid{opacity:.5}
+[data-theme="light"] #cursor-glow{display:none}
+[data-theme="light"] #scroll-progress{opacity:.85}
+
+/* Стекло на светлом: больше непрозрачности и тёплая тень */
+[data-theme="light"] .glass{background:linear-gradient(160deg,rgba(16,24,43,.05),rgba(16,24,43,.02)),rgba(255,255,255,.78);border-color:var(--line);box-shadow:0 10px 36px -18px rgba(16,24,43,.28)}
+[data-theme="light"] .glass--accent::before{opacity:.35}
+
+/* Шапка и мобильное меню */
+[data-theme="light"] .site-header{background:rgba(248,250,255,.6)}
+[data-theme="light"] .site-header.is-scrolled,[data-theme="light"] .site-header.scrolled{background:rgba(248,250,255,.9);border-color:var(--line)}
+[data-theme="light"] .mobile-nav{background:rgba(248,250,255,.96)}
+[data-theme="light"] .nav__link:hover{background:rgba(16,24,43,.06)}
+[data-theme="light"] .nav-toggle{background:rgba(16,24,43,.05)}
+[data-theme="light"] .nav-toggle__bars span{background:var(--text)}
+
+/* Кнопки и чипы */
+[data-theme="light"] .btn--ghost{background:rgba(16,24,43,.05)}
+[data-theme="light"] .btn--ghost:hover{background:rgba(8,145,178,.1)}
+[data-theme="light"] .badge{color:#2b3554;background:rgba(16,24,43,.05)}
+[data-theme="light"] .badge--accent{color:#0e7490;background:rgba(8,145,178,.1)}
+[data-theme="light"] .badge--status{color:#3f6212;background:rgba(77,124,15,.1)}
+[data-theme="light"] .tag,[data-theme="light"] .tags>*{color:#2f3a59;background:rgba(16,24,43,.05)}
+[data-theme="light"] .tech{background:rgba(16,24,43,.05)}
+[data-theme="light"] .chip{background:rgba(16,24,43,.05)}
+[data-theme="light"] .chip[aria-pressed="true"],[data-theme="light"] .chip.is-active{color:#fff;background:linear-gradient(120deg,var(--cyan),var(--violet) 60%,var(--pink))}
+
+/* Карточки проектов */
+[data-theme="light"] .project-card{background:linear-gradient(160deg,rgba(16,24,43,.05),rgba(16,24,43,.02)),rgba(255,255,255,.85)}
+[data-theme="light"] .project-card__cover{background:#dde4f0}
+[data-theme="light"] .project-card__placeholder,[data-theme="light"] .project-card__cover--empty{background:radial-gradient(70% 90% at 20% 0%,rgba(34,211,238,.35),transparent 70%),radial-gradient(70% 90% at 90% 100%,rgba(139,92,246,.4),transparent 70%),#dde4f0;color:#10182b}
+
+/* Карточки разработчика и терминал */
+[data-theme="light"] .dev-card{box-shadow:0 30px 80px -30px rgba(124,58,237,.35),0 0 120px -40px rgba(8,145,178,.3)}
+[data-theme="light"] .dev-card__chip{background:rgba(255,255,255,.9);color:#10182b}
+[data-theme="light"] .terminal{color:var(--text)}
+
+/* Контакты, модалка, тост */
+[data-theme="light"] .contact-card{background:rgba(16,24,43,.04)}
+[data-theme="light"] .contact-card:hover{background:rgba(16,24,43,.06)}
+[data-theme="light"] .modal__panel{background:rgba(255,255,255,.97);box-shadow:0 40px 120px -30px rgba(16,24,43,.35)}
+[data-theme="light"] .modal__close{background:rgba(16,24,43,.08)}
+[data-theme="light"] .modal__cover{background:radial-gradient(70% 90% at 20% 0%,rgba(34,211,238,.25),transparent 70%),radial-gradient(70% 90% at 90% 100%,rgba(139,92,246,.3),transparent 70%),#dde4f0}
+[data-theme="light"] .toast{background:rgba(248,250,255,.97);color:#15803d;border-color:rgba(21,128,61,.4)}
+
+/* Текстовые градиенты остаются яркими, но читаемыми */
+[data-theme="light"] ::selection{background:rgba(124,58,237,.28);color:#10182b}

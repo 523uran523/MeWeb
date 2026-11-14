@@ -718,8 +718,37 @@
     });
   }
 
+  /* ---------- Theme (светлая/тёмная, localStorage) ---------- */
+  function setupTheme() {
+    var toggle = $('#theme-toggle');
+    var meta = document.querySelector('meta[name="theme-color"]');
+    function applyTheme(theme) {
+      if (theme === 'light') root.setAttribute('data-theme', 'light');
+      else root.removeAttribute('data-theme'); /* тёмная — дефолт из :root */
+      if (meta) meta.setAttribute('content', theme === 'light' ? '#edf0f7' : '#05060a');
+      if (toggle) {
+        var sun = $('.icon-sun', toggle);
+        var moon = $('.icon-moon', toggle);
+        var isLight = theme === 'light';
+        if (sun) sun.style.display = isLight ? 'none' : 'block'; /* светлая → луна, тёмная → солнце */
+        if (moon) moon.style.display = isLight ? 'block' : 'none';
+        toggle.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+        toggle.setAttribute('aria-label', isLight ? 'Включить тёмную тему' : 'Включить светлую тему');
+      }
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (error) { /* приватный режим: по умолчанию тёмная */ }
+    applyTheme(saved === 'light' ? 'light' : 'dark');
+    on(toggle, 'click', function () {
+      var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+      try { localStorage.setItem('theme', next); } catch (error) { /* без хранения — сессионная тема */ }
+    });
+  }
+
   /* ---------- Init ---------- */
   function init() {
+    setupTheme();
     if (projects.length) {
       renderProjects();
       setupCarousel();
